@@ -11,6 +11,7 @@ import { createPublicClient, createWalletClient, http } from "viem";
 import { useWalletClient } from "wagmi";
 import { useConnectModal } from '@rainbow-me/rainbowkit';
 
+// helper to ensure that an eth address starts with '0x'
 function ensureAddressFormat(address: string) {
   if (!address.startsWith('0x')) {
     return `0x${address}`;
@@ -18,6 +19,7 @@ function ensureAddressFormat(address: string) {
   return address;
 }
 
+// handle the nft minting process
 async function mintNFT(
   walletClient: WalletClient,
   address: Address,
@@ -25,22 +27,30 @@ async function mintNFT(
   quantityToMint: number,
   mintReferralAddress: string
 ) {
+  // error things: ensure that the wallet client has a valid chain selected
   if (!walletClient.chain) {
     throw new Error("Chain is undefined");
   }
 
+  // set up minting api and client configs
   const mintAPI = createMintClient({ chain: walletClient.chain });
   const publicClient = createPublicClient({
     chain: walletClient.chain,
     transport: http(),
   });
+
+  // make parameters for the minting api request
   const mintableParams = new URLSearchParams({
     tokenId: `${tokenID}`,
     collectionAddress: address,
     chainName: mintAPI.network.zoraBackendChainName,
   }).toString();
+
+  // fetching mintable data
   const result = await fetch(`/api/mintable?${mintableParams}`)
   const mintable = await result.json();
+
+  // prepare mint token parameters
   const params = await mintAPI.makePrepareMintTokenParams({
     mintable,
     publicClient,
@@ -52,10 +62,16 @@ async function mintNFT(
       mintReferral: mintReferralAddress as `0x${string}`,
     },
   });
+
+  // simulate the mint
   const simulatedMinted = await publicClient.simulateContract(
     params.simulateContractParameters
   );
+
+  // send the mint transaction
   const hash = await walletClient.writeContract(simulatedMinted.request);
+
+  // waiting on the transaction and the receipt
   return await publicClient.waitForTransactionReceipt({ hash });
 }
 interface MintButtonProps {
@@ -64,12 +80,14 @@ interface MintButtonProps {
 }
 
 function MintButton({ contractAddress, tokenId }: MintButtonProps) {
-  //const address = contractAddress;
+  // converting input contract address and tokenId 
   const address: Address = contractAddress as Address;
-  //const tokenId = BigInt(1);
   const tokenBigInt = BigInt(tokenId);
+
   const walletClient = useWalletClient();
   const { openConnectModal } = useConnectModal();
+
+  // check if the wallet is connected
   const isWalletConnected = walletClient?.data !== undefined;
   const [isMinting, setIsMinting] = useState(false);
   const toast = useToast();
@@ -78,6 +96,7 @@ function MintButton({ contractAddress, tokenId }: MintButtonProps) {
   const [quantityToMint, setQuantityToMint] = useState(1);
   const mintCostPerNFT = 0.000777;
 
+  // quantity button things
   const incrementQuantity = () => {
     setQuantityToMint(q => q + 1);
   };
@@ -86,14 +105,18 @@ function MintButton({ contractAddress, tokenId }: MintButtonProps) {
     setQuantityToMint(q => Math.max(1, q - 1));
   };
 
+  // using my address for testing
   const mintReferralAddress = "0x4B921B8AFDc9cCFc7297Bbe6c3a7eACe7dA93D92";
 
   const handleMint = async () => {
+    // check if the wallet is connected before minting
     if (walletClient?.data) {
-      setIsMinting(true); // Start minting
+      setIsMinting(true); // minting started
       try {
         const formattedMintReferralAddress = ensureAddressFormat(mintReferralAddress) as `0x${string}`;
         await mintNFT(walletClient.data, address, tokenBigInt, quantityToMint, formattedMintReferralAddress);
+        
+        // success toast
         toast({
           title: "Success",
           description: "NFT minted successfully!",
@@ -106,11 +129,13 @@ function MintButton({ contractAddress, tokenId }: MintButtonProps) {
         let errorMessage = "Something went wrong. Please try again.";
         let errorTitle = "Error";        
         
-      // Check for a transaction rejection error
+      // handle rejected transactions
       if (error instanceof Error && error.message.includes("User denied transaction signature")) {
         errorMessage = "Transaction rejected by user.";
         errorTitle = "Transaction Rejected";
       }
+
+      // error toast 
       toast({
         title: "Error",
         description: errorMessage,
@@ -120,13 +145,14 @@ function MintButton({ contractAddress, tokenId }: MintButtonProps) {
         position: "top",
       });
       } finally {
-        setIsMinting(false); // End minting
+        setIsMinting(false); // minting done
       }
     } else {
+      // open wallet connect modal if the wallet is not connected
       if (openConnectModal) {
         openConnectModal();
       } else {
-        // Handle the case where openConnectModal is undefined
+        // if openConnectModal is undefined
         console.error("Wallet connection functionality is unavailable.");
         toast({
           title: "Error",
