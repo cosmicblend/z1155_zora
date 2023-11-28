@@ -3,7 +3,9 @@ import ConnectButtonCustom from './connectButtonCustom';
 import { 
     Flex, 
     Box,
+    Heading,
     Text, 
+    Button
 } from '@chakra-ui/react';
 
 const HeaderNav = () => {
@@ -14,13 +16,14 @@ const HeaderNav = () => {
             position='sticky'
             top='0'
             zIndex='10'
-            boxShadow="md"
-            //alignItems='center'
+            backgroundColor='#ffffff'
+            boxShadow='md'
+            p={4}
         >
-            <Box borderWidth='1px' borderColor='#000'>
-                <Text>nameHere</Text>
+            <Box>
+                <Heading>brandHere</Heading>
             </Box>
-            <Box borderWidth='1px' borderColor='#000'>
+            <Box>
                 <ConnectButtonCustom />
             </Box>
         </Flex>

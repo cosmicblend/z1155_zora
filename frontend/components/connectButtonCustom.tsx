@@ -1,4 +1,5 @@
 import { ConnectButton } from '@rainbow-me/rainbowkit';
+import { Box, Button } from '@chakra-ui/react';
 export const ConnectButtonCustom = () => {
   return (
     <ConnectButton.Custom>
@@ -11,8 +12,6 @@ export const ConnectButtonCustom = () => {
         authenticationStatus,
         mounted,
       }) => {
-        // Note: If your app doesn't use authentication, you
-        // can remove all 'authenticationStatus' checks
         const ready = mounted && authenticationStatus !== 'loading';
         const connected =
           ready &&
@@ -21,7 +20,7 @@ export const ConnectButtonCustom = () => {
           (!authenticationStatus ||
             authenticationStatus === 'authenticated');
         return (
-          <div
+          <Box
             {...(!ready && {
               'aria-hidden': true,
               'style': {
@@ -34,27 +33,27 @@ export const ConnectButtonCustom = () => {
             {(() => {
               if (!connected) {
                 return (
-                  <button onClick={openConnectModal} type="button">
+                  <Button onClick={openConnectModal} type="button">
                     Connect Wallet
-                  </button>
+                  </Button>
                 );
               }
               if (chain.unsupported) {
                 return (
-                  <button onClick={openChainModal} type="button">
+                  <Button onClick={openChainModal} type="button">
                     Wrong network
-                  </button>
+                  </Button>
                 );
               }
               return (
-                <div style={{ display: 'flex', gap: 12 }}>
-                  <button
+                <Box style={{ display: 'flex', gap: 12 }}>
+                  <Button
                     onClick={openChainModal}
                     style={{ display: 'flex', alignItems: 'center' }}
                     type="button"
                   >
                     {chain.hasIcon && (
-                      <div
+                      <Box
                         style={{
                           background: chain.iconBackground,
                           width: 12,
@@ -71,20 +70,20 @@ export const ConnectButtonCustom = () => {
                             style={{ width: 12, height: 12 }}
                           />
                         )}
-                      </div>
+                      </Box>
                     )}
                     {chain.name}
-                  </button>
-                  <button onClick={openAccountModal} type="button">
+                  </Button>
+                  <Button onClick={openAccountModal} type="button">
                     {account.displayName}
                     {account.displayBalance
                       ? ` (${account.displayBalance})`
                       : ''}
-                  </button>
-                </div>
+                  </Button>
+                </Box>
               );
             })()}
-          </div>
+          </Box>
         );
       }}
     </ConnectButton.Custom>

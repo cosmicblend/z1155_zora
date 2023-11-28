@@ -25,7 +25,7 @@ const Home: NextPage = () => {
 
       <HeaderNav />
 
-      <Flex>
+      <Flex justifyContent='center' p={4}>
         <main>
           <Heading>RainbowKit, wagmi, next, chakra, zora js sdk</Heading>
           <ConnectButtonCustom />
