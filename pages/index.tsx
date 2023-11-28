@@ -1,5 +1,6 @@
 //import { ConnectButton } from '@rainbow-me/rainbowkit';
 import HeaderNav from '../frontend/components/headerNav';
+import NftCardList from '../frontend/components/nftCardList';
 import ConnectButtonCustom from '../frontend/components/connectButtonCustom';
 import type { NextPage } from 'next';
 import Head from 'next/head';
@@ -28,6 +29,11 @@ const Home: NextPage = () => {
       <Flex justifyContent='center' p={4}>
         <main>
           <Heading>RainbowKit, wagmi, next, chakra, zora js sdk</Heading>
+
+          <Box>
+            <NftCardList startIndex={0} itemCount={1} columnCount={1}/>
+          </Box>
+
           <ConnectButtonCustom />
         </main>
       </Flex>

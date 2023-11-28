@@ -34,14 +34,14 @@ export const ConnectButtonCustom = () => {
               if (!connected) {
                 return (
                   <Button onClick={openConnectModal} type="button">
-                    Connect Wallet
+                    connect wallet
                   </Button>
                 );
               }
               if (chain.unsupported) {
                 return (
                   <Button onClick={openChainModal} type="button">
-                    Wrong network
+                    wrong network
                   </Button>
                 );
               }

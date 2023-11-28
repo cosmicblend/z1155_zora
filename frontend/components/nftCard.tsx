@@ -24,7 +24,7 @@ interface NftCardProps {
     explorerLink: string;
 }
 
-  const NftList: React.FC<NftCardProps> = ({ 
+  const NftCard: React.FC<NftCardProps> = ({ 
     nftTitle, 
     authorName, 
     imageUrl, 
@@ -46,7 +46,7 @@ interface NftCardProps {
         <Text my={2}>{description}</Text>
       </Stack>
       <Stack my={2}>
-        <p>mint button here</p>
+        <MintButton contractAddress={contractAddress} tokenId={tokenID} />
       </Stack>
       <Stack mt={8} align="center" direction='row'>
         <Link href={zoraLink} isExternal>
@@ -61,4 +61,4 @@ interface NftCardProps {
 
   };
   
-  export default NftList;
+  export default NftCard;
