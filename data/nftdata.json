@@ -1,17 +1,197 @@
 [
+  {
+    "id": 1,
+    "artTitle": "Take Up Space Manifesto",
+    "artistName": "Take Up Space",
+    "imageUrl": "https://ipfs.decentralized-content.com/ipfs/bafybeibqonq2zt4sqscbnvtuw7w6qe3i523dix2w2mxpwi2dzxftrlf5au",
+    "description": "we are culture.",
+    "contractAddress": "0x20EBD712125F56749202da2a11782450A6CC0864",
+    "tokenID": "2",
+    "artistLink": "https://www.takeupspace.io/",
+    "zoraLink": "https://zora.co/collect/zora:0x20ebd712125f56749202da2a11782450a6cc0864/2",
+    "explorerLink": "https://explorer.zora.energy/address/0x20ebd712125f56749202da2a11782450a6cc0864"
+  },
+  {
+    "id": 2,
+    "artTitle": "BURN 4 U",
+    "artistName": "Take Up Space",
+    "imageUrl": "https://ipfs.decentralized-content.com/ipfs/bafybeicngpijgmh7w357waqiyxshtmptoawfrxaeopamzp46dvqbkxtsk4",
+    "description": "¸,ø¤º°°º¤ø,¸♥ At the intersection of technology and togetherness, you’ll find a burned CD. The Y2K substitute of a hand-written love letter. Painstakingly downloaded on dial-up internet. Lovingly curated into the perfect mix♥¸,ø¤º°°º¤ø,¸",
+    "contractAddress": "0x20EBD712125F56749202da2a11782450A6CC0864",
+    "tokenID": "1",
+    "artistLink": "https://www.takeupspace.io/",
+    "zoraLink": "https://zora.co/collect/zora:0x20ebd712125f56749202da2a11782450a6cc0864/1",
+    "explorerLink": "https://explorer.zora.energy/address/0x20EBD712125F56749202da2a11782450A6CC0864"
+  },
+  {
+    "id": 3,
+    "artTitle": "Latent Lovers",
+    "artistName": "Moises Sanabria",
+    "imageUrl": "https://ipfs.decentralized-content.com/ipfs/bafybeihr433p5xqxd2ylnpfr5sn5r6vkfnt627v6r6xjxdbeugzi7pixoy",
+    "description": "'Latent Lovers' draws a connection between the possibility space in machine learning's latent realm and the odds of discovering one's soulmate.",
+    "contractAddress": "0xf7A3913B27368554011A0896ccD5A86F565901D9",
+    "tokenID": "1",
+    "artistLink": "https://twitter.com/moisesdsanabria",
+    "zoraLink": "https://zora.co/collect/zora:0xf7a3913b27368554011a0896ccd5a86f565901d9/1",
+    "explorerLink": "https://explorer.zora.energy/address/0xf7a3913b27368554011a0896ccd5a86f565901d9"
+  },
+  {
+    "id": 4,
+    "artTitle": "Earthly Bodies",
+    "artistName": "Alexandra Obochi",
+    "imageUrl": "https://ipfs.decentralized-content.com/ipfs/bafybeih7jqpk22pvcdpfr2edugs5ubbv42oy26oi57q65spxsxeqwmayhm",
+    "description": "Earthly bodies seeks to explore the disconnect of people from their environment and how they have lost touch with their spiritual connection with nature.",
+    "contractAddress": "0x1F2fB822a7A657103BB5666962B6903B8471Df2D",
+    "tokenID": "1",
+    "artistLink": "https://twitter.com/Fatshionistaa",
+    "zoraLink": "https://zora.co/collect/zora:0x1f2fb822a7a657103bb5666962b6903b8471df2d/1",
+    "explorerLink": "https://explorer.zora.energy/address/0x1f2fb822a7a657103bb5666962b6903b8471df2d"
+  },
+  {
+    "id": 5,
+    "artTitle": "CELESTIAL TECH | SUN LESSON",
+    "artistName": "Laura Helen",
+    "imageUrl": "https://ipfs.decentralized-content.com/ipfs/bafybeibvaun2msbnarjeztx63kpchr5ekkwlgax6lzv4mpjxl2vxha7kcy",
+    "description": "This bright star is a teacher and a healer, a celestial body who guides and graces us with rays of warmth. Every person reading this - technologists, artists, creatives, curators, collectors - are as plants: in need of sunlight, in need of nourishment, in need of embodiment, in need of soul to thrive.",
+    "contractAddress": "0xFB6e057CBE4Cf535dc64d1F77d4a4718888248d5",
+    "tokenID": "1",
+    "artistLink": "https://zora.co/birdsoar.eth",
+    "zoraLink": "https://zora.co/collect/zora:0xfb6e057cbe4cf535dc64d1f77d4a4718888248d5/1",
+    "explorerLink": "https://explorer.zora.energy/address/0xfb6e057cbe4cf535dc64d1f77d4a4718888248d5"
+  },
+  {
+    "id": 6,
+    "artTitle": "Web3nnections",
+    "artistName": "qabqabqab",
+    "imageUrl": "https://ipfs.decentralized-content.com/ipfs/bafybeia3pwfpnif66zyqhpqckjagtsljy6v3p4homlatww4z7wosbsd5ee",
+    "description": "Web3nnections', celebrates diversity and the union of people from different backgrounds and genders, using blockchain technology as a bridge to a global community through art.",
+    "contractAddress": "0x1fDa7C28C5Cc0796ce93c4958864412c26e5b4fC",
+    "tokenID": "1",
+    "artistLink": "https://zora.co/qabqabqab.eth",
+    "zoraLink": "https://zora.co/collect/zora:0x1fda7c28c5cc0796ce93c4958864412c26e5b4fc/1",
+    "explorerLink": "https://explorer.zora.energy/address/0x1fda7c28c5cc0796ce93c4958864412c26e5b4fc"
+  },
+  {
+    "id": 7,
+    "artTitle": "Bridges Across Bytes",
+    "artistName": "Ebuka Mordi",
+    "imageUrl": "https://ipfs.decentralized-content.com/ipfs/bafybeiehn42qligqhnjlvc42ge5ljcgstziswvixmqlvjey7asu2k6px6i",
+    "description": "Bridges across Bytes beautifully explores the idea of technology as a bridge between people, overcoming distance and cultural differences.The scene depicts two individuals, each in their own unique world, brought together by a digital thread symbolizing the magic of technology.",
+    "contractAddress": "0xe3C3D93d6beb4eb56346d1263bD6F7B7340a0084",
+    "tokenID": "1",
+    "artistLink": "https://ebukamordi.com/",
+    "zoraLink": "https://zora.co/collect/zora:0xe3c3d93d6beb4eb56346d1263bd6f7b7340a0084/1",
+    "explorerLink": "https://explorer.zora.energy/address/0xe3c3d93d6beb4eb56346d1263bd6f7b7340a0084"
+  },
+  {
+    "id": 8,
+    "artTitle": "A Dream Fantasy Core",
+    "artistName": "arbstein",
+    "imageUrl": "https://ipfs.decentralized-content.com/ipfs/bafybeieak6275jddcdxv6mhqlw55wrypg4rscmsblr3pkbliwm6ezvt22q",
+    "description": ". ཹ the air is changing, just as our intuition does, rivers turn metallic, an electric surge weighs on you and me, we race through interfaces that follow us, you gave me your hand, I gave you mine, and tonight, time began to satin and our bodies to blend.ུུ۪༶.༶ུ۪.ུ۪",
+    "contractAddress": "0xb03D513B0a159296F7dcc5a99A9795C9CA7AdeD6",
+    "tokenID": "4",
+    "artistLink": "https://zora.co/arbstein.eth",
+    "zoraLink": "https://zora.co/collect/zora:0xb03d513b0a159296f7dcc5a99a9795c9ca7aded6/4",
+    "explorerLink": "https://explorer.zora.energy/address/0xb03d513b0a159296f7dcc5a99a9795c9ca7aded6"
+  },
+  {
+    "id": 9,
+    "artTitle": "Conjoined Love",
+    "artistName": "Mihr",
+    "imageUrl": "https://ipfs.decentralized-content.com/ipfs/bafybeid535mxvwrzgasdi2bbqgeaacypa3e2hcjhj75ze2so4ajz2b2iaq",
+    "description": "In 'Conjoined Love,' the dichotomy of connection and individuality is explored through a confluence of color and form. How closely do our bonds define us? What does it mean to lose yourself in love?",
+    "contractAddress": "0x3669BE535b84157b743Da7C931Eb9589cb5B8eBd",
+    "tokenID": "1",
+    "artistLink": "https://zora.co/mihr.eth?enjoy=collected",
+    "zoraLink": "https://zora.co/collect/zora:0x3669be535b84157b743da7c931eb9589cb5b8ebd/1",
+    "explorerLink": "https://explorer.zora.energy/address/0x3669be535b84157b743da7c931eb9589cb5b8ebd"
+  },
+  {
+    "id": 10,
+    "artTitle": "UR FAV CHEAT CODE",
+    "artistName": "Quetzal Gelo",
+    "imageUrl": "https://ipfs.decentralized-content.com/ipfs/bafybeiczzy76pvgc2xocd47qvnv2mxrtg6f3dqy464t7rr42xyb5ld62ha",
+    "description": "MOTHERLODE references my favorite childhood game 'Sims 2', a game that united many people on the planet, and many still remember the 'Motherlode' cheat code. Who knows, maybe in the future we will be able to control ourselves as Sims, and easily communicate across language and others barriers.",
+    "contractAddress": "0x408b73f569E76a4D92d72526D5e64f17cC1cf4aC",
+    "tokenID": "2",
+    "artistLink": "https://zora.co/0xa51fc978850c373dd965ab7d1edf24692d0d0d61",
+    "zoraLink": "https://zora.co/collect/zora:0x408b73f569e76a4d92d72526d5e64f17cc1cf4ac/2",
+    "explorerLink": "https://explorer.zora.energy/address/0x408b73f569e76a4d92d72526d5e64f17cc1cf4ac"
+  },
+  {
+      "id": 11,
+      "artTitle": "HEALWARE",
+      "artistName": "Angel Darmella",
+      "imageUrl": "https://ipfs.decentralized-content.com/ipfs/bafybeigklr24a5gvxaugyosxdxlmsifp2k7dnftubpbcj5oaz7l37sfu5y",
+      "description": "HEALWEAR examines how, with just a simple click, technology transcends physical borders, uniting people from every corner of the globe. It's not just about connectivity; it's about finding your tribe, your community.",
+      "contractAddress": "0x9E23E35B836B468047c54DF4dD415a7E31E0c08E",
+      "tokenID": "1",
+      "artistLink": "https://www.angeldarmella.com/aiphotography",
+      "zoraLink": "https://zora.co/collect/zora:0x9e23e35b836b468047c54df4dd415a7e31e0c08e/1",
+      "explorerLink": "https://explorer.zora.energy/address/0x9e23e35b836b468047c54df4dd415a7e31e0c08e"
+    },
     {
-      "id": 1,
-      "nftTitle": "Take Up Space Manifesto",
-      "authorName": "Take Up Space",
-      "imageUrl": "https://ipfs.decentralized-content.com/ipfs/bafybeibqonq2zt4sqscbnvtuw7w6qe3i523dix2w2mxpwi2dzxftrlf5au",
-      "description": "we are culture.",
-      "contractAddress": "0x20EBD712125F56749202da2a11782450A6CC0864",
-      "tokenID": "2",
-      "projectLink": "https://www.takeupspace.io/",
-      "zoraLink": "https://zora.co/collect/zora:0x20ebd712125f56749202da2a11782450a6cc0864/2",
-      "explorerLink": "https://explorer.zora.energy/address/0x20ebd712125f56749202da2a11782450a6cc0864"
+      "id": 12,
+      "artTitle": "HOODEMPIRE",
+      "artistName": "Draco",
+      "imageUrl": "https://ipfs.decentralized-content.com/ipfs/bafybeifqrmr3gkfclw6xy5k3p4s5ag7mfbkydppy737qbc6c3dlsakbd5e",
+      "description": "someone once said, rap is the modern pyramid which made me think - what are we building?",
+      "contractAddress": "0x1e0035Ae7fDBcDa236d4c5a49D9FC22473422C29",
+      "tokenID": "1",
+      "artistLink": "https://zora.co/0x359e3b5c9808e89e1a7f6337e47a54484bf92c27",
+      "zoraLink": "https://zora.co/collect/zora:0x1e0035ae7fdbcda236d4c5a49d9fc22473422c29/1",
+      "explorerLink": "https://explorer.zora.energy/address/0x1e0035ae7fdbcda236d4c5a49d9fc22473422c29"
+    },
+    {
+      "id": 13,
+      "artTitle": "Jazzing all the back to the future in color",
+      "artistName": "Taylor Watson",
+      "imageUrl": "https://ipfs.decentralized-content.com/ipfs/bafkreic6c5ecwhya5z7wloz4tipdozagxlcx5swq665dhkuxdosplfsa4u",
+      "description": "This artwork embodies the fusion of beauty and Afrofuturistic nostalgia, inspired by my love for sci-fi and black cinema. It emerged from a realm of imagination and colorful dreams, resulting in a captivating and enjoyable piece.",
+      "contractAddress": "0x8Dd4C6F2206568ae4E93d28Ac8f7ec936B9E10E2",
+      "tokenID": "1",
+      "artistLink": "https://zora.co/heartspaceave.eth",
+      "zoraLink": "https://zora.co/collect/zora:0x8dd4c6f2206568ae4e93d28ac8f7ec936b9e10e2/1",
+      "explorerLink": "https://explorer.zora.energy/address/0x8dd4c6f2206568ae4e93d28ac8f7ec936b9e10e2"
+    },
+    {
+      "id": 14,
+      "artTitle": "Do you understand?",
+      "artistName": "Lill Terror",
+      "imageUrl": "https://ipfs.decentralized-content.com/ipfs/bafybeibvrxmy3wt2r77xwooxh2jvyvcqd5fn4x6t7zhena3n52rqfqphiu",
+      "description": "Do you understand? Sometimes difficult to express or communicate.",
+      "contractAddress": "0x6076430E383A402B92A1eA7aB8c90495a6226fE4",
+      "tokenID": "1",
+      "artistLink": "https://zora.co/terrorzinart.eth",
+      "zoraLink": "https://zora.co/collect/zora:0x6076430e383a402b92a1ea7ab8c90495a6226fe4/1",
+      "explorerLink": "https://explorer.zora.energy/address/0x6076430e383a402b92a1ea7ab8c90495a6226fe4"
+    },
+    {
+      "id": 15,
+      "artTitle": "NEKRA: Iteration Artifact 0.3 ",
+      "artistName": "Lori Baldwin",
+      "imageUrl": "https://ipfs.decentralized-content.com/ipfs/bafybeifjye7r4lzjp5jcp7aa5b5d6uzbvvbsshagmiu46bgdc5gt5vzary",
+      "description": "This series presents generative abstract paintings based on the NEKRA: Seed Phrase Collection, creating a dynamic feedback loop between text and visual art. It is a conversation between machines facilitated by a human.",
+      "contractAddress": "0x343fb4e44a8eE060dD5e53036352e1f884608eCE",
+      "tokenID": "1",
+      "artistLink": "https://zora.co/iamloribaldwin.eth",
+      "zoraLink": "https://zora.co/collect/zora:0x343fb4e44a8ee060dd5e53036352e1f884608ece/1",
+      "explorerLink": "https://explorer.zora.energy/address/0x343fb4e44a8ee060dd5e53036352e1f884608ece"
+    },
+    {
+      "id": 16,
+      "artTitle": "tech is my friend",
+      "artistName": "Naomi Metzger",
+      "imageUrl": "https://ipfs.decentralized-content.com/ipfs/bafybeihays4dmduizycwhsjan74m6xjzfaekfciqslfs5lhovvcstskyzu",
+      "description": "In a world where loneliness is at a high technology provides us with ways to feel connected.",
+      "contractAddress": "0x3370e1426cD4192565dc74811fe19FD1f61B46E8",
+      "tokenID": "1",
+      "artistLink": "https://twitter.com/NaomiMetzgerTJ",
+      "zoraLink": "https://zora.co/collect/zora:0x3370e1426cd4192565dc74811fe19fd1f61b46e8/1",
+      "explorerLink": "https://explorer.zora.energy/address/0x3370e1426cd4192565dc74811fe19fd1f61b46e8"
     }
-  ]
+]
+
+
   
-  
-    
