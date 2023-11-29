@@ -1,6 +1,6 @@
 import HeaderNav from '../frontend/components/headerNav';
 import NftCardList from '../frontend/components/nftCardList';
-import ConnectButtonCustom from '../frontend/components/connectButtonCustom';
+//import ConnectButtonCustom from '../frontend/components/connectButtonCustom';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import { 

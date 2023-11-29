@@ -1,5 +1,5 @@
 import React from 'react';
-import ArtWall from './nftCard';
+import NftCard from './nftCard';
 import nftData from '../../data/nftdata.json'; 
 import { 
     SimpleGrid
@@ -15,7 +15,7 @@ const NftCardList = ({
   return (
     <SimpleGrid columns={[1, columnCount, null, null]} spacing="2rem">
       {sortedNfts.slice(startIndex, startIndex + itemCount).map((nftItem, index) => (
-        <ArtWall
+        <NftCard
           key={index}
           nftTitle={nftItem.nftTitle}
           authorName={nftItem.authorName}
