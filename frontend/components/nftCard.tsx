@@ -36,7 +36,7 @@ interface NftCardProps {
     zoraLink,
     explorerLink
  }) => {
-    return <Card variant="filled" p={['2', '8']} >
+    return <Card variant="filled" height='auto' p={['1', '1']} >
   
     <CardBody>
       <Image src={imageUrl} alt={nftTitle} mb={4}/>

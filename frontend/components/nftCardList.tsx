@@ -8,7 +8,7 @@ import {
 const NftCardList = ({ 
   startIndex = 0, 
   itemCount = nftData.length,
-  columnCount = 2
+  columnCount = 3
 }) => {
   const sortedNfts = nftData.sort((a, b) => a.id - b.id);
 

@@ -1,5 +1,6 @@
 import HeaderNav from '../frontend/components/headerNav';
-import NftCardList from '../frontend/components/nftCardList';
+//import NftCardList from '../frontend/components/nftCardList';
+import ShNftCardList from '../frontend/components/shNftCardList';
 //import ConnectButtonCustom from '../frontend/components/connectButtonCustom';
 import type { NextPage } from 'next';
 import Head from 'next/head';
@@ -25,12 +26,12 @@ const Home: NextPage = () => {
 
       <HeaderNav />
 
-      <Flex justifyContent='center' p={4}>
+      <Flex justifyContent='center' p={1}>
         <main>
           <Heading>RainbowKit, wagmi, next, chakra, zora js sdk</Heading>
 
           <Box>
-            <NftCardList startIndex={0} columnCount={1}/>
+            <ShNftCardList startIndex={0} columnCount={3}/>
           </Box>
         </main>
       </Flex>
