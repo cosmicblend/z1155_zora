@@ -1,4 +1,4 @@
-const limit = 50;
+const limit = 100;
 const chain = 'zora';
 const includeNftDetails = '1';
 const options = {

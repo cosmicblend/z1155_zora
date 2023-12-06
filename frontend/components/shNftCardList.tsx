@@ -3,15 +3,23 @@ import ShNftCard from './shNftCard';
 import useSWR from 'swr';
 import { fetcher, baseUrl } from '../../services/simpleHash';
 import { ApiResponse } from '../../interfaces/zoraface';
-import { Box, SimpleGrid } from '@chakra-ui/react';
+import { 
+  Box, 
+  SimpleGrid,
+  Button,
+  Text
+} from '@chakra-ui/react';
 
 const ShNftCardList = ({ startIndex = 0, columnCount = 3 }) => {
-    const { data: shData, error } = useSWR<ApiResponse>(baseUrl, fetcher);
+    //const { data: shData, error } = useSWR<ApiResponse>(baseUrl, fetcher);
+    const { data: shData, error, mutate } = useSWR<ApiResponse>(baseUrl, fetcher, {
+      revalidateOnFocus: false,
+      revalidateOnReconnect: false
+  });
 
     if (error) return <Box>Failed to load</Box>;
     if (!shData) return <Box>Loading...</Box>;
 
-    //const sortedNfts = shData.transfers.sort((a, b) => a.nft_details.created_date.localeCompare(b.nft_details.created_date))
     const sortedNfts = shData.transfers.sort((a, b) => {
       const dateA = a.nft_details.created_date || '';
       const dateB = b.nft_details.created_date || '';
@@ -21,7 +29,15 @@ const ShNftCardList = ({ startIndex = 0, columnCount = 3 }) => {
     
     const itemCount = shData.transfers.length;
 
+    // manually refresh
+    const refreshData = () => {
+      mutate();
+    };
+
     return (
+      <Box>
+        <Button onClick={refreshData} colorScheme="blue" my={4}>Refresh Data</Button>
+        <Text as='h2'>Card List Here</Text>
         <SimpleGrid columns={[1, columnCount, null, null]} spacing="2rem">
             {sortedNfts.slice(startIndex, startIndex + itemCount).map((nftItem) => {
                 return (
@@ -38,6 +54,7 @@ const ShNftCardList = ({ startIndex = 0, columnCount = 3 }) => {
                 );
             })}
         </SimpleGrid>
+      </Box>
     );
 };
 
