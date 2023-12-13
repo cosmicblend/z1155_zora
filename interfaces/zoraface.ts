@@ -30,6 +30,7 @@ export interface NftItem {
       external_url: string | null;
       created_date: string;
       contract: {
+        type: string;
         owned_by: string;
         has_multiple_collections: boolean;
       };

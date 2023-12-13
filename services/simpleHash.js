@@ -1,4 +1,4 @@
-const limit = 100;
+const limit = 50;
 const chain = 'zora';
 const includeNftDetails = '1';
 const options = {
@@ -7,5 +7,6 @@ const options = {
 };
 
 export const baseUrl = `https://api.simplehash.com/api/v0/nfts/transfers/${chain}?include_nft_details=${includeNftDetails}&order_by=timestamp_desc&limit=${limit}`;
+// todo: wallet list test
 
 export const fetcher = url => fetch(url, options).then(res => res.json());

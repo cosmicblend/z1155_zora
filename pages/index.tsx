@@ -1,6 +1,7 @@
 import HeaderNav from '../frontend/components/headerNav';
 //import NftCardList from '../frontend/components/nftCardList';
 import ShNftCardList from '../frontend/components/shNftCardList';
+import ZpmNftCardList from '../frontend/components/zpmNftCardList';
 //import ConnectButtonCustom from '../frontend/components/connectButtonCustom';
 import type { NextPage } from 'next';
 import Head from 'next/head';
@@ -9,17 +10,18 @@ import {
   Box,
   Heading,
   Text,
+  Tabs,
+  TabList,
+  TabPanels,
+  Tab,
+  TabPanel
 } from '@chakra-ui/react';
 
 const Home: NextPage = () => {
   return (
-    <Box
-      backgroundColor='gray.50'
-      borderWidth='0.5rem' 
-      borderColor='pink.100' 
-    >
+    <Box backgroundColor='gray.50'>
       <Head>
-        <title>RainbowKit App</title>
+        <title>zora poster wall experiment</title>
         <meta content="things here" name="more things here"/>
         <link href="/favicon.ico" rel="icon" />
       </Head>
@@ -28,11 +30,27 @@ const Home: NextPage = () => {
 
       <Flex justifyContent='center' p={1}>
         <main>
-          <Heading>RainbowKit, wagmi, next, chakra, zora js sdk</Heading>
-
-          <Box>
-            <ShNftCardList startIndex={0} columnCount={3}/>
-          </Box>
+          <Tabs variant='enclosed' mt={6}>
+            <TabList>
+              <Tab>premint results</Tab>
+              <Tab>SimpleHash results</Tab>
+            </TabList>
+            <TabPanels>
+              <TabPanel>
+                <Box>
+                  <Heading>50 latest premint results</Heading>
+                  <ZpmNftCardList startIndex={0} columnCount={5}/>
+                </Box>
+              </TabPanel>
+              <TabPanel>
+                <Box>
+                  <Heading>50 latest SimpleHash results</Heading>
+                  <Text>not filtered by token type. from the sales and transfers simplehash model</Text>
+                  <ShNftCardList startIndex={0} columnCount={5}/>
+                </Box>
+              </TabPanel>
+            </TabPanels>
+          </Tabs>
         </main>
       </Flex>
     </Box>

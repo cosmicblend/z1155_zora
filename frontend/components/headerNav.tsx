@@ -21,10 +21,10 @@ const HeaderNav = () => {
             p={4}
         >
             <Box>
-                <Heading>brandHere</Heading>
+                <Text>zora experiment: poster wall data</Text>
             </Box>
             <Box>
-                <ConnectButtonCustom />
+                {/*<ConnectButtonCustom />*/}
             </Box>
         </Flex>
     );
