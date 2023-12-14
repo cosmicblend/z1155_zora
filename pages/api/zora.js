@@ -1,4 +1,6 @@
-module.exports = async (req, res) => {
+import fetch from 'node-fetch';
+
+export default async function handler(req, res) {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -7,4 +9,3 @@ module.exports = async (req, res) => {
     const data = await response.json();
     res.json(data);
 };
-
