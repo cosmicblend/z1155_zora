@@ -4,6 +4,7 @@ import ShNftCardList from '../frontend/components/shNftCardList';
 import ZpmNftCardList from '../frontend/components/zpmNftCardList';
 import OpNftCardList from '../frontend/components/opNftCardList';
 import BaseNftCardList from '../frontend/components/baseNftCardList';
+import SolNftCardList from '../frontend/components/solNftCardList';
 //import ConnectButtonCustom from '../frontend/components/connectButtonCustom';
 import type { NextPage } from 'next';
 import Head from 'next/head';
@@ -34,11 +35,11 @@ const Home: NextPage = () => {
         <main>
           <Tabs variant='enclosed' mt={6}>
             <TabList>
-              <Tab>premint results</Tab>
+              <Tab>zora premint results</Tab>
               <Tab>zora transactions</Tab>
               <Tab>op transactions</Tab>
               <Tab>base transactions</Tab>
-              <Tab>todo: solana</Tab>
+              <Tab>solana transactions</Tab>
               <Tab>todo: zk</Tab>
               <Tab>todo: frame</Tab>
             </TabList>
@@ -67,8 +68,9 @@ const Home: NextPage = () => {
                 <BaseNftCardList startIndex={0} columnCount={5}/>
               </TabPanel>
               <TabPanel>
-                <Heading>todo: solana results</Heading>
+                <Heading>50 latest solana transactions</Heading>
                 <Text>not filtered by token type. from the sales and transfers simplehash model</Text>
+                <SolNftCardList startIndex={0} columnCount={5}/>
               </TabPanel>
               <TabPanel>
                 <Heading>todo: zk results</Heading>

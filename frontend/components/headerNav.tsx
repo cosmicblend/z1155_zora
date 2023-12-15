@@ -21,7 +21,7 @@ const HeaderNav = () => {
             p={4}
         >
             <Box>
-                <Text>zora experiment: poster wall data</Text>
+                <Text>data insights</Text>
             </Box>
             <Box>
                 {/*<ConnectButtonCustom />*/}
