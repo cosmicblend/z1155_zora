@@ -2,6 +2,8 @@ import HeaderNav from '../frontend/components/headerNav';
 //import NftCardList from '../frontend/components/nftCardList';
 import ShNftCardList from '../frontend/components/shNftCardList';
 import ZpmNftCardList from '../frontend/components/zpmNftCardList';
+import OpNftCardList from '../frontend/components/opNftCardList';
+import BaseNftCardList from '../frontend/components/baseNftCardList';
 //import ConnectButtonCustom from '../frontend/components/connectButtonCustom';
 import type { NextPage } from 'next';
 import Head from 'next/head';
@@ -33,21 +35,48 @@ const Home: NextPage = () => {
           <Tabs variant='enclosed' mt={6}>
             <TabList>
               <Tab>premint results</Tab>
-              <Tab>SimpleHash results</Tab>
+              <Tab>zora transactions</Tab>
+              <Tab>op transactions</Tab>
+              <Tab>base transactions</Tab>
+              <Tab>todo: solana</Tab>
+              <Tab>todo: zk</Tab>
+              <Tab>todo: frame</Tab>
             </TabList>
             <TabPanels>
               <TabPanel>
                 <Box>
-                  <Heading>50 latest premint results</Heading>
+                  <Heading>50 latest zora premint results</Heading>
                   <ZpmNftCardList startIndex={0} columnCount={5}/>
                 </Box>
               </TabPanel>
               <TabPanel>
                 <Box>
-                  <Heading>50 latest SimpleHash results</Heading>
+                  <Heading>50 latest zora transactions</Heading>
                   <Text>not filtered by token type. from the sales and transfers simplehash model</Text>
                   <ShNftCardList startIndex={0} columnCount={5}/>
                 </Box>
+              </TabPanel>
+              <TabPanel>
+                <Heading>50 latest op transactions</Heading>
+                <Text>not filtered by token type. from the sales and transfers simplehash model</Text>
+                <OpNftCardList startIndex={0} columnCount={5}/>
+              </TabPanel>
+              <TabPanel>
+                <Heading>50 latest base transactions</Heading>
+                <Text>not filtered by token type. from the sales and transfers simplehash model</Text>
+                <BaseNftCardList startIndex={0} columnCount={5}/>
+              </TabPanel>
+              <TabPanel>
+                <Heading>todo: solana results</Heading>
+                <Text>not filtered by token type. from the sales and transfers simplehash model</Text>
+              </TabPanel>
+              <TabPanel>
+                <Heading>todo: zk results</Heading>
+                <Text>not filtered by token type. from the sales and transfers simplehash model</Text>
+              </TabPanel>
+              <TabPanel>
+                <Heading>todo: frame results</Heading>
+                <Text>not filtered by token type. from the sales and transfers simplehash model</Text>
               </TabPanel>
             </TabPanels>
           </Tabs>

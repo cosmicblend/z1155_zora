@@ -22,7 +22,7 @@ interface ShNftCardProps {
     type: string;
 }
 
-const ShNftCard: React.FC<ShNftCardProps> = ({
+const BaseNftCard: React.FC<ShNftCardProps> = ({
     name,
     description,
     image_url,
@@ -49,8 +49,17 @@ const ShNftCard: React.FC<ShNftCardProps> = ({
             <Text>
                 <strong>todo: total minted</strong>
             </Text>
+            <Text>
+                <strong>todo: platform created on</strong>
+            </Text>
+            <Text>
+                <strong>todo: payment token data</strong>
+            </Text>
+            <Text>
+                <strong>todo: price per token</strong>
+            </Text>
             <Button fontSize='sm' colorScheme='pink'>
-                <Link href={`https://zora.co/collect/zora:${contract_address}/${token_id}`}>zora page</Link>
+                <Text>todo: marketplace links</Text>
             </Button>
         </Stack>
         <Stack align="center" direction='row'>
@@ -62,4 +71,4 @@ const ShNftCard: React.FC<ShNftCardProps> = ({
 
 };
   
-export default ShNftCard;
+export default BaseNftCard;
