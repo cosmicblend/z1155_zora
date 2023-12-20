@@ -47,6 +47,7 @@ const Home: NextPage = () => {
               <TabPanel>
                 <Box>
                   <Heading>50 latest zora premint results</Heading>
+                  <Text>give the premint data a moment. its a little slow as I filter out already minted collection that the premint api returns for some reason</Text>
                   <ZpmNftCardList startIndex={0} columnCount={5}/>
                 </Box>
               </TabPanel>
