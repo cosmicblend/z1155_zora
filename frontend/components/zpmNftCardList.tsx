@@ -1,9 +1,8 @@
-import React from 'react';
-//import ShNftCard from './shNftCard';
+import React, { useState, useEffect } from 'react';
 import ZpmNftCard from './zpmNftCard';
 import useSWR from 'swr';
 import { premintFetcher, premintBaseUrl } from '../../services/premintapi';
-import { PremintApiResponse } from '../../interfaces/premint';
+import { PremintApiResponse, PremintNftItem } from '../../interfaces/premint';
 import { 
   Box, 
   SimpleGrid,
@@ -17,38 +16,59 @@ const ZpmNftCardList = ({ startIndex = 0, columnCount = 3 }) => {
       revalidateOnReconnect: false
   });
 
+  const [filteredNfts, setFilteredNfts] = useState<PremintNftItem[]>([]);
+
+  useEffect(() => {
+      if (shData) {
+          filterNFTsWithRedirects(shData.data);
+      }
+  }, [shData]);
+
   if (error) return <Box>Failed to load</Box>;
   if (!shData) return <Box>Loading...</Box>;
 
   const currentTime = Math.floor(Date.now() / 1000); 
 
-  const sortedNfts = shData.data.sort((a, b) => {
+  const checkRedirect = async (url: string) => {
+    const response = await fetch(`../../services/checkRedirect?url=${encodeURIComponent(url)}`);
+    const data = await response.json();
+    return !data.isRedirect;
+  }; 
+
+  const filterNFTsWithRedirects = async (nfts: PremintNftItem[]) => {
+    //const checks = nfts.map(nft => checkRedirect(nft.collection.image || ''));
+    const checks = nfts.map((nft: PremintNftItem) => checkRedirect(nft.collection.image || ''));
+    const results = await Promise.all(checks);
+    //const filtered = nfts.filter((_, index) => results[index]);
+    const filtered = nfts.filter((_, index: number) => results[index]);
+    setFilteredNfts(filtered);
+  };
+
+  const sortedAndFilteredNfts = filteredNfts.sort((a, b) => {
     const mintStartA = parseInt(a.mint_context.premint.tokenConfig.mintStart) || 0;
     const mintStartB = parseInt(b.mint_context.premint.tokenConfig.mintStart) || 0;
-  
-    // Compare the differences from the current time
+
     const differenceA = currentTime - mintStartA;
     const differenceB = currentTime - mintStartB;
-  
-    // Sort based on the differences (the farther in the past, the larger the difference)
-    return differenceA - differenceB;
-  }).map((item, index) => ({ ...item, customIndex: index }));  
 
-  const itemCount = shData.data.length;
+    return differenceA - differenceB;
+  });
+
+  const itemCount = sortedAndFilteredNfts.length;
 
   // manually refresh
-  const refreshData = () => {
-    mutate();
-    };
+  //const refreshData = () => {
+  //  mutate();
+  //};
 
     return (
       <Box>
         {/*<Button onClick={refreshData} colorScheme="blue" my={4}>Refresh Data</Button>*/}
         <SimpleGrid columns={[1, columnCount, null, null]} spacing=".25rem">
-            {sortedNfts.slice(startIndex, startIndex + itemCount).map((PremintNftItem) => {
+            {sortedAndFilteredNfts.slice(startIndex, startIndex + itemCount).map((PremintNftItem, index) => {
                 return (
                     <ZpmNftCard
-                        key={PremintNftItem.customIndex}
+                        key={index}
                         name={PremintNftItem.collection.name}
                         description={PremintNftItem.collection.description || 'no description yet'}
                         collection_image={PremintNftItem.collection.image || '#null'}
