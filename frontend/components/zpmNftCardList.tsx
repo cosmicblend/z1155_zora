@@ -17,20 +17,28 @@ const ZpmNftCardList = ({ startIndex = 0, columnCount = 3 }) => {
       revalidateOnReconnect: false
   });
 
-    if (error) return <Box>Failed to load</Box>;
-    if (!shData) return <Box>Loading...</Box>;
+  if (error) return <Box>Failed to load</Box>;
+  if (!shData) return <Box>Loading...</Box>;
 
-    const sortedNfts = shData.data.sort((a, b) => {
-        const dateA = a.start_datetime || '';
-        const dateB = b.start_datetime || '';
-        return dateA.localeCompare(dateB);
-    }).map((item, index) => ({ ...item, customIndex: index }));
-    
-    const itemCount = shData.data.length;
+  const currentTime = Math.floor(Date.now() / 1000); 
 
-    // manually refresh
-    const refreshData = () => {
-      mutate();
+  const sortedNfts = shData.data.sort((a, b) => {
+    const mintStartA = parseInt(a.mint_context.premint.tokenConfig.mintStart) || 0;
+    const mintStartB = parseInt(b.mint_context.premint.tokenConfig.mintStart) || 0;
+  
+    // Compare the differences from the current time
+    const differenceA = currentTime - mintStartA;
+    const differenceB = currentTime - mintStartB;
+  
+    // Sort based on the differences (the farther in the past, the larger the difference)
+    return differenceA - differenceB;
+  }).map((item, index) => ({ ...item, customIndex: index }));  
+
+  const itemCount = shData.data.length;
+
+  // manually refresh
+  const refreshData = () => {
+    mutate();
     };
 
     return (

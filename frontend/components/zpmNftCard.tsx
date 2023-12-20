@@ -59,7 +59,11 @@ const ZpmNftCard: React.FC<ZpmNftCardProps> = ({
             </Text>*/}
             <Text>
                 <strong>mint start:</strong><br /> 
-                {Math.floor((Math.floor(Date.now() / 1000) - parseInt(mint_start)) / 86400)} days
+                {
+                    Math.floor((Date.now() / 1000 - parseInt(mint_start)) / 86400) > 0 
+                    ? `${Math.floor((Date.now() / 1000 - parseInt(mint_start)) / 86400)} days ago`
+                    : 'Today'
+                }
             </Text>
             <Text>
                 <strong>duration:</strong><br /> 
