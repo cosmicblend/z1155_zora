@@ -30,7 +30,7 @@ const ZpmNftCardList = ({ startIndex = 0, columnCount = 3 }) => {
   const currentTime = Math.floor(Date.now() / 1000); 
 
   const checkRedirect = async (url: string) => {
-    const response = await fetch(`../../services/checkRedirect?url=${encodeURIComponent(url)}`);
+    const response = await fetch(`/api/services/checkRedirect?url=${encodeURIComponent(url)}`);
     const data = await response.json();
     return !data.isRedirect;
   }; 
