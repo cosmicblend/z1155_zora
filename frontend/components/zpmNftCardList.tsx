@@ -36,13 +36,16 @@ const ZpmNftCardList = ({ startIndex = 0, columnCount = 3 }) => {
   }; 
 
   const filterNFTsWithRedirects = async (nfts: PremintNftItem[]) => {
-    //const checks = nfts.map(nft => checkRedirect(nft.collection.image || ''));
-    //const checks = nfts.map((nft: PremintNftItem) => checkRedirect(nft.collection.image || ''));
-    const checks = nfts.map((nft: PremintNftItem) => checkRedirect(`https://zora.co/collect/zora:${nft.contract_address}/${nft.token_id}` || ''));
-    const results = await Promise.all(checks);
-    //const filtered = nfts.filter((_, index) => results[index]);
-    const filtered = nfts.filter((_, index: number) => results[index]);
-    setFilteredNfts(filtered);
+    //const checks = nfts.map((nft: PremintNftItem) => checkRedirect(`https://zora.co/collect/zora:${nft.contract_address}/${nft.token_id}` || ''));
+    //const results = await Promise.all(checks);
+    //const filtered = nfts.filter((_, index: number) => results[index]);
+    //setFilteredNfts(filtered);
+
+    const urls = nfts.map(nft => `https://zora.co/collect/zora:${nft.contract_address}/${nft.token_id}`);
+    const response = await fetch(`/api/checkRedirect?urls=${encodeURIComponent(urls.join(','))}`);
+    const isRedirectArray = await response.json();
+    const filteredNfts = nfts.filter((_, index) => !isRedirectArray[index]);
+    setFilteredNfts(filteredNfts);
   };
 
   const sortedAndFilteredNfts = filteredNfts.sort((a, b) => {
